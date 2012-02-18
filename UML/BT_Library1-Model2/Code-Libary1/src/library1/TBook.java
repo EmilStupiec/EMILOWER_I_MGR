@@ -15,10 +15,11 @@ public class TBook implements Serializable {
     }
 
     public TTitle_book getmTitle_book () {
-        return null;
+        return mTitle_book;
     }
 
     public void setmTitle_book (TTitle_book title_book) {
+        mTitle_book=title_book;
     }
 
     public Date getPeriod () {
@@ -29,22 +30,33 @@ public class TBook implements Serializable {
     }
 
     public int getNumber () {
-        return 0;
+        return number;
     }
 
     public void setNumber (int val) {
+        number=val;
     }
 
     public boolean equals (Object obj) {
+        if(this.getNumber()==((TBook)obj).getNumber())
         return true;
+        else
+            return false;
     }
 
     public int hashCode () {
         return 0;
     }
 
+    @Override
     public String toString () {
-        return null;
+        
+        String num="";
+        num+= mTitle_book.toString();
+        num+= " number: "+number+" ";
+        if(getPeriod()!=null)
+          num+= "period: "+getPeriod()+" ";
+        return num;
     }
 
     public boolean period_pass (Object data) {
