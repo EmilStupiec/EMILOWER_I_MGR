@@ -1,0 +1,4 @@
+place-is an obiect that represent state of a part of the modeling system,
+transition-is an object that alow or not system to change state between palces,
+state of Petri net-is an uniqe permutation of places states defined in the system.
+enabled transition-is transition that satisfy all desirable conditions(input arc's weight)
