@@ -11,10 +11,12 @@ public class TTitle_book_on_tape extends TTitle_book implements Serializable {
 
     private String actor;
 
+    @Override
     public String getActor() {
         return actor;
     }
 
+    @Override
     public void setActor(String actor) {
         this.actor = actor;
     }
@@ -25,10 +27,10 @@ public class TTitle_book_on_tape extends TTitle_book implements Serializable {
 
     public void setActor (String val) {
     }*/
-
+/*
     public String toString () {
         return null;
     }
-
+*/
 }
 
