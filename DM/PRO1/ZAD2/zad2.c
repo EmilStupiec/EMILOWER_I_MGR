@@ -1,4 +1,3 @@
-//Sieve of Atkin
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
@@ -40,6 +39,7 @@ int main(int argc, char *argv[]){
         fprintf(stderr, "No digits were found\n");
         exit(EXIT_FAILURE);
     }
+    //Sieve of Atkin
     is_prime = (int*) malloc(limit*sizeof(int));
     for(i=0;i<limit;i++)
 		is_prime[i]=0;
