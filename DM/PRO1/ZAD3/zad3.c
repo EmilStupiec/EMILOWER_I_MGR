@@ -7,8 +7,11 @@
 #include <math.h>//only for INFINITY NAN HUGE_VAL HUGE_VALF HUGE_VALL
 
 void check_if_permutation(int *permutation,int n);
-void generate_all_permutation_of_n(int n);
+void generate_all_permutation_of_n(int *permutation,int n);
 void sort(int *array,int n);
+long factorial(int n);
+void swap(int *a,int *b);
+void print_permutation(int *permutation,int n);
 
 int main(int argc, char *argv[]){
 	int n,*permutation,i;
@@ -42,33 +45,74 @@ int main(int argc, char *argv[]){
 		printf("%d,",permutation[i]);
 	printf("\b)\n");
 	check_if_permutation(permutation,n);
-	generate_all_permutation_of_n(n);
+	generate_all_permutation_of_n(permutation,n);
 	return 0;
 }
 
 void check_if_permutation(int *permutation,int n){
-	int i;
+	int i,if_perm;
 	sort(permutation,n);
-	printf("Given sequence\n(");
+	if_perm=0;
+	for(i=0;i<n;i++){
+		if(permutation[i]!=i+1){
+			if_perm=1;
+			break;
+		}
+	}
+	if(if_perm==1)
+		printf("is not permutation\n");
+	else
+		printf("is permutation\n");
+}
+
+void generate_all_permutation_of_n(int *permutation,int n){
+	printf("All permutations for %d elements\n",n);
+	int i,j,*one_pointer;
+	one_pointer=permutation+n;
+	for(i=0;i<factorial(n);i++){
+		if(one_pointer!=&permutation[n-1]){
+			swap(one_pointer,one_pointer+1);
+			one_pointer++;
+		}else{
+			swap(one_pointer,permutation);
+			one_pointer=permutation;
+		}
+		print_permutation(permutation,n);
+	}
+}
+
+void sort(int *array,int n){
+	int i,j,swaped;
+	do{
+		swaped=0;
+		for(i=1;i<n;i++){
+			if(array[i-1]>array[i]){
+				swap(&array[i-1],&array[i]);
+				swaped=1;
+			}
+		}
+	}while(swaped==1);
+}
+
+long factorial(n){
+	if(n>1)
+		return n*factorial(n-1);
+	else
+		return 1;
+}
+
+void swap(int *a,int *b){
+	int c;
+	c=*a;
+	*a=*b;
+	*b=c;
+}
+
+void print_permutation(int *permutation,int n){
+	int i;
+	printf("(");
 	for(i=0;i<n;i++)
 		printf("%d,",permutation[i]);
 	printf("\b)\n");
 }
 
-void generate_all_permutation_of_n(int n){
-	
-}
-
-void sort(int *array,int n){
-	int i,j,temp,swaped;
-	swaped=0;
-	while(swaped==0)
-		for(i=1;i<n;i++){
-			if(array[i-1]>array[i]){
-				temp=array[i-1];
-				array[i-1]=array[i];
-				array[i]=temp;
-				swaped=1;
-			}
-		}
-}
