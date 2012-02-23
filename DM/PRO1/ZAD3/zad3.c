@@ -12,6 +12,7 @@ void sort(int *array,int n);
 long factorial(int n);
 void swap(int *a,int *b);
 void print_permutation(int *permutation,int n);
+void req_perm_gen(int *permutation,int n,int req);
 
 int main(int argc, char *argv[]){
 	int n,*permutation,i;
@@ -45,6 +46,7 @@ int main(int argc, char *argv[]){
 		printf("%d,",permutation[i]);
 	printf("\b)\n");
 	check_if_permutation(permutation,n);
+	printf("All permutations for %d elements\n",n);
 	generate_all_permutation_of_n(permutation,n);
 	return 0;
 }
@@ -66,10 +68,15 @@ void check_if_permutation(int *permutation,int n){
 }
 
 void generate_all_permutation_of_n(int *permutation,int n){
-	printf("All permutations for %d elements\n",n);
-	int i,j,*one_pointer;
-	one_pointer=permutation+n;
-	for(i=0;i<factorial(n);i++){
+	int i;
+	for(i=0;i<n;i++){
+    	permutation[i]=0;
+  	}
+  	req_perm_gen(permutation,n,0);
+}
+	/*int i,j,*last_pointer,*first_pointer;
+	last_pointer=permutation+n-1;
+	/*for(i=0;i<factorial(n);i++){
 		if(one_pointer!=&permutation[n-1]){
 			swap(one_pointer,one_pointer+1);
 			one_pointer++;
@@ -79,7 +86,21 @@ void generate_all_permutation_of_n(int *permutation,int n){
 		}
 		print_permutation(permutation,n);
 	}
-}
+	//printf("%d\n",*last_pointer);
+	for(i=0;i<n-1;i++){
+		swap(last_pointer,last_pointer--);
+		print_permutation(permutation-zero,n+zero);
+	}
+	if(n>1)
+		generate_all_permutation_of_n(++zero,++permutation,n-1);
+	else
+		return;
+	//printf("%d %d %d\n",*last_pointer,n,zero);
+	for(i=0;i<n-1;i++){
+		swap(last_pointer,last_pointer++);
+		print_permutation(permutation-zero,n+zero-1);
+	}*/
+//}
 
 void sort(int *array,int n){
 	int i,j,swaped;
@@ -116,3 +137,17 @@ void print_permutation(int *permutation,int n){
 	printf("\b)\n");
 }
 
+void req_perm_gen(int *permutation,int n,int req){
+ 	static int level = -1;
+ 	int i;
+  	level = level+1;
+  	permutation[req]=level;
+  	if (level==n)
+    	print_permutation(permutation,n);
+    else
+    	for (i=0;i<n;i++)
+      		if (permutation[i]==0)
+         		req_perm_gen(permutation,n,i);
+  	level=level-1;
+  	permutation[req]=0;
+}
