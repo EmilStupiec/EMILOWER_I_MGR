@@ -1,0 +1,45 @@
+Behavioural properties:
+
+Reachability set
+R(M0)={0010011,	0011000,0010100,0010010 
+	 	1001000,1000100,1000010 
+		0101000,0100100,0100010
+	0010012,0011001,0010101,0010011 
+	 	1001001,1000101,1000011 
+		0101001,0100101,0100011 }
+
+R(M0)={001001x,	001100y,001010y,001001y 
+	 	100100y,100010y,100001y 
+		010100y,010010y,010001y }
+where y=x-1
+
+bounded : 
+this petri net is not bounded but is live and rvesible.
+Petri net is not safe becouse of place 6 which is not bounded.
+coverable marking :
+R(M0)={001001x,	001100y,001010y,001001y 
+	 	100100y,100010y,100001y 
+		010100y,010010y,010001y }
+where y=x-1
+Formal Description 
+P={p0,p1,p2,p3,p4,p5,p6},
+T={t0,t1,t2,t3,t4,t5},
+B={{p0,t1}->1, {p1,t2}->1, {p2,t0}->1, {p3,t4}->1, {p4,t5}->1, {p5,t3}->1, {p6,t3}->1}, A={{t0,p0}->1, {t1,p1}->1, {t2,p2}->1, {t3,p3}->1, {t4,p4} ,{t5,p5}},
+I=0 (empty),
+M0={p0=0,p1=0,p2=1,p3=0,p4=0,p4=0,p6=1}.
+
+
+Extended description : 
+
+P={p0,p1,p2,p3,p4,p5,p6},
+T={t0,t1,t2,t3,t4,t5},
+B={{p0,t1}->1, {p1,t2}->1, {p2,t0}->1, {p3,t4}->1, {p4,t5}->1, {p5,t3}->1, {p6,t3}->1}, A={{t0,p0}->1, {t1,p1}->1, {t2,p2}->1, {t3,p3}->1, {t4,p4} ,{t5,p5}},
+I=0 (empty),
+M0={p0=0,p1=0,p2=1,p3=0,p4=0,p4=0,p6=1}.
+B={p0->inf, p1->inf, p2->inf, p3->inf, p4->inf, p5->inf, p6->1}
+
+this petri net is bounded live and rvesible and safe.  
+coverable marking : no?
+
+Schema: 
+Capacity of place 'M: message is sending' = 1 

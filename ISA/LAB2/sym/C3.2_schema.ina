@@ -1,0 +1,9 @@
+Integrated Net Analyzer [v2.2p6-Mar 23 2001-win32] session report:
+Current net options are:
+    token  type: black        (for Place/Transition nets)
+    time option: no times
+    firing rule: normal with capacities
+    priorities : not to be used
+    strategy   : single transitions
+    line length: 255
+

@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<pnml>
+<net id="Net-One" type="P/T net">
+<tokenclass id="Default" enabled="true" red="0" green="0" blue="0"/>
+<labels x="326" y="395" width="1" height="1" border="true">
+<text/>
+</labels>
+<labels x="259" y="288" width="109" height="46" border="true">
+<text>there schould be an inhibitor arc 
+from p3 to t1 </text>
+</labels>
+<place id="loosing message">
+<graphics>
+<position x="285.0" y="465.0"/>
+</graphics>
+<name>
+<value>loosing message</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P0 B: message is preparing">
+<graphics>
+<position x="150.0" y="150.0"/>
+</graphics>
+<name>
+<value>P0 B: message is preparing</value>
+<graphics>
+<offset x="101.0" y="-13.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P1 B: message encrytpion">
+<graphics>
+<position x="150.0" y="270.0"/>
+</graphics>
+<name>
+<value>P1 B: message encrytpion</value>
+<graphics>
+<offset x="94.0" y="-18.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P2 B: other work">
+<graphics>
+<position x="45.0" y="210.0"/>
+</graphics>
+<name>
+<value>P2 B: other work</value>
+<graphics>
+<offset x="64.0" y="-6.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P3 M: message is sending">
+<graphics>
+<position x="270.0" y="210.0"/>
+</graphics>
+<name>
+<value>P3 M: message is sending</value>
+<graphics>
+<offset x="98.0" y="5.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P4 M: message decryption">
+<graphics>
+<position x="390.0" y="150.0"/>
+</graphics>
+<name>
+<value>P4 M: message decryption</value>
+<graphics>
+<offset x="175.0" y="26.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P5 M: message is reading">
+<graphics>
+<position x="390.0" y="270.0"/>
+</graphics>
+<name>
+<value>P5 M: message is reading</value>
+<graphics>
+<offset x="172.0" y="32.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P6 M:other work">
+<graphics>
+<position x="510.0" y="210.0"/>
+</graphics>
+<name>
+<value>P6 M:other work</value>
+<graphics>
+<offset x="71.0" y="-1.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<transition id="T0">
+<graphics>
+<position x="150.0" y="210.0"/>
+</graphics>
+<name>
+<value>T0</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="T1">
+<graphics>
+<position x="150.0" y="330.0"/>
+</graphics>
+<name>
+<value>T1</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="T2">
+<graphics>
+<position x="150.0" y="90.0"/>
+</graphics>
+<name>
+<value>T2</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="T3">
+<graphics>
+<position x="390.0" y="90.0"/>
+</graphics>
+<name>
+<value>T3</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="T4">
+<graphics>
+<position x="390.0" y="210.0"/>
+</graphics>
+<name>
+<value>T4</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="T5">
+<graphics>
+<position x="390.0" y="330.0"/>
+</graphics>
+<name>
+<value>T5</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="T6">
+<graphics>
+<position x="240.0" y="450.0"/>
+</graphics>
+<name>
+<value>T6</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<arc id="P0 to T0" source="P0 B: message is preparing" target="T0">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="161" y="176" curvePoint="false"/>
+<arcpath id="001" x="161" y="216" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P1 B: message encrytpion to T6" source="P1 B: message encrytpion" target="T6">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="169" y="295" curvePoint="false"/>
+<arcpath id="001" x="252" y="447" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P1 to T1" source="P1 B: message encrytpion" target="T1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="161" y="296" curvePoint="false"/>
+<arcpath id="001" x="160" y="336" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P2 to T2" source="P2 B: other work" target="T2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="67" y="210" curvePoint="false"/>
+<arcpath id="001" x="156" y="106" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P3 M: message is sending to T6" source="P3 M: message is sending" target="T6">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="280" y="236" curvePoint="false"/>
+<arcpath id="001" x="252" y="447" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P3 to T3" source="P3 M: message is sending" target="T3">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="292" y="211" curvePoint="false"/>
+<arcpath id="001" x="395" y="106" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P4 to T4" source="P4 M: message decryption" target="T4">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="401" y="176" curvePoint="false"/>
+<arcpath id="001" x="401" y="216" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P5 to T5" source="P5 M: message is reading" target="T5">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="401" y="296" curvePoint="false"/>
+<arcpath id="001" x="396" y="336" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P6 to T3" source="P6 M:other work" target="T3">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="511" y="211" curvePoint="false"/>
+<arcpath id="001" x="409" y="107" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T0 to P1" source="T0" target="P1 B: message encrytpion">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="161" y="226" curvePoint="false"/>
+<arcpath id="001" x="161" y="267" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T1 to P2" source="T1" target="P2 B: other work">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="153" y="336" curvePoint="false"/>
+<arcpath id="001" x="66" y="233" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T1 to P3" source="T1" target="P3 M: message is sending">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="167" y="337" curvePoint="false"/>
+<arcpath id="001" x="271" y="232" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T2 to P0" source="T2" target="P0 B: message is preparing">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="166" y="107" curvePoint="false"/>
+<arcpath id="001" x="163" y="147" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T3 to P4" source="T3" target="P4 M: message decryption">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="402" y="107" curvePoint="false"/>
+<arcpath id="001" x="402" y="147" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T4 to P5" source="T4" target="P5 M: message is reading">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="401" y="226" curvePoint="false"/>
+<arcpath id="001" x="401" y="267" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T5 to P6" source="T5" target="P6 M:other work">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="406" y="337" curvePoint="false"/>
+<arcpath id="001" x="511" y="232" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T6 to loosing message" source="T6" target="loosing message">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="256" y="462" curvePoint="false"/>
+<arcpath id="001" x="282" y="471" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T6 to P3 M: message is sending" source="T6" target="P3 M: message is sending">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="252" y="447" curvePoint="false"/>
+<arcpath id="001" x="280" y="236" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+</net>
+</pnml>
