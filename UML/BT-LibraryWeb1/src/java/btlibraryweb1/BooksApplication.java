@@ -32,15 +32,6 @@ public class BooksApplication extends AbstractFragmentBean {
      */
     private void _init() throws Exception {
     }
-    private SingleSelectOptionsList dropDown1DefaultOptions = new SingleSelectOptionsList();
-
-    public SingleSelectOptionsList getDropDown1DefaultOptions() {
-        return dropDown1DefaultOptions;
-    }
-
-    public void setDropDown1DefaultOptions(SingleSelectOptionsList ssol) {
-        this.dropDown1DefaultOptions = ssol;
-    }
     private DropDown dropDown1 = new DropDown();
 
     public DropDown getDropDown1() {

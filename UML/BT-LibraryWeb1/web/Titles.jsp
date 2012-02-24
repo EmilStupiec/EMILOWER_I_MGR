@@ -20,12 +20,19 @@
                         <div style="left: 0px; top: 144px; position: absolute">
                             <jsp:directive.include file="Menu.jspf"/>
                         </div>
-                        <webuijsf:button binding="#{Titles.addtitle}" id="addtitle" style="left: 599px; top: 240px; position: absolute" text="Add title"/>
+                        <webuijsf:button actionExpression="#{Titles.addtitle_action}" binding="#{Titles.addtitle}" id="addtitle"
+                            style="left: 575px; top: 240px; position: absolute" text="Add title"/>
                         <webuijsf:messageGroup id="messageGroup1" style="left: 576px; top: 144px; position: absolute; width: 142px"/>
-                        <div style="height: 190px; left: 288px; top: 144px; position: absolute; width: 190px">
+                        <div style="height: 190px; left: 288px; top: 144px; position: absolute; width: 238px">
                             <jsp:directive.include file="FormTitle.jspf"/>
                         </div>
-                    </webuijsf:form>
+                        <div style="left: 24px; top: 384px; position: absolute">
+                            <jsp:directive.include file="BooksApplication.jspf"/>
+                        </div>
+                        <div  style="left: 384px; top: 408px; position: absolute">
+                            <jsp:directive.include file="TitlesApplication.jspf"/>
+                        </div>
+                        </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
         </webuijsf:page>

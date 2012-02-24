@@ -6,6 +6,8 @@
 package btlibraryweb1;
 
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.component.Button;
+import com.sun.webui.jsf.component.DropDown;
 import com.sun.webui.jsf.component.Hyperlink;
 import javax.faces.FacesException;
 
@@ -30,6 +32,15 @@ public class Accessible extends AbstractPageBean {
      * here is subject to being replaced.</p>
      */
     private void _init() throws Exception {
+    }
+    private Button search1 = new Button();
+
+    public Button getSearch1() {
+        return search1;
+    }
+
+    public void setSearch1(Button b) {
+        this.search1 = b;
     }
 
     // </editor-fold>
@@ -74,6 +85,11 @@ public class Accessible extends AbstractPageBean {
         // Perform application initialization that must complete
         // *after* managed components are initialized
         // TODO - add your own initialization code here
+        TitlesApplication titlediv=(TitlesApplication)getBean("TitlesApplication");
+        DropDown titlelist=titlediv.getTitles();
+        if(titlelist.getSelected()==null){
+            getApplicationBean1().prepare_books(0);
+        }
     }
 
     /**
@@ -100,6 +116,8 @@ public class Accessible extends AbstractPageBean {
         Menu menudiv=(Menu)getBean("Menu");
         Hyperlink link4=menudiv.getHyperlink4();
         link4.setDisabled(true);
+        FormPeriod bookdiv=(FormPeriod)getBean("FormPeriod");
+        bookdiv.refresh_form();
     }
 
     /**
@@ -140,6 +158,20 @@ public class Accessible extends AbstractPageBean {
     protected ApplicationBean1 getApplicationBean1() {
         return (ApplicationBean1) getBean("ApplicationBean1");
     }
+
+    public String search1_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        TitlesApplication titlesdiv=(TitlesApplication)getBean("TitlesApplication");
+        String data1[]=titlesdiv.select_title();
+        FormPeriod bookdiv=(FormPeriod)getBean("FormPeriod");
+        String data2=bookdiv.form_book();
+        if(data1!=null && data2!=null){
+            getApplicationBean1().search_accessible_book(data1,data2);
+        }
+        return null;
+    }
+
     
 }
 

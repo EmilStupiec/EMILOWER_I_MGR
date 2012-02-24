@@ -8,6 +8,7 @@ package btlibraryweb1;
 import com.sun.rave.web.ui.appbase.AbstractFragmentBean;
 import com.sun.webui.jsf.component.TextField;
 import javax.faces.FacesException;
+import javax.faces.component.html.HtmlPanelGrid;
 
 /**
  * <p>Fragment bean that corresponds to a similarly named JSP page
@@ -75,6 +76,15 @@ public class FormTitle extends AbstractFragmentBean {
 
     public void setTitle(TextField tf) {
         this.title = tf;
+    }
+    private HtmlPanelGrid titleapplicationpanel = new HtmlPanelGrid();
+
+    public HtmlPanelGrid getTitleapplicationpanel() {
+        return titleapplicationpanel;
+    }
+
+    public void setTitleapplicationpanel(HtmlPanelGrid hpg) {
+        this.titleapplicationpanel = hpg;
     }
     // </editor-fold>
 
@@ -151,6 +161,63 @@ public class FormTitle extends AbstractFragmentBean {
      */
     protected ApplicationBean1 getApplicationBean1() {
         return (ApplicationBean1) getBean("ApplicationBean1");
+    }
+    
+    public void refresh_form(){
+        titleapplicationpanel.setRendered(true);
+        title.setText("");
+        author.setText("");
+        isbn.setText("");
+        publisher.setText("");
+        actor.setText("");
+    }
+
+    public String[] form_title(){
+        titlevalidate();
+        authorvalidate();
+        ISBNvalidate();
+        publishervalidate();
+        actorvalidate();
+        String what_title_book_type;
+        if(actor.getText().equals("")){
+            what_title_book_type="1";
+        }else{
+            what_title_book_type="3";
+        }
+        String data[]={what_title_book_type,(String) author.getText(),
+        (String) title.getText(),(String) isbn.getText(),
+        (String) publisher.getText(),(String) actor.getText()};
+        return data;
+    }
+
+    public void titlevalidate(){
+        String text=(String) title.getText();
+        text=text.replaceAll(" ","_");
+        title.setText(text);
+    }
+
+    public void authorvalidate(){
+        String text=(String) author.getText();
+        text=text.replaceAll(" ","_");
+        author.setText(text);
+    }
+
+    public void ISBNvalidate(){
+        String text=(String) isbn.getText();
+        text=text.replaceAll(" ","_");
+        isbn.setText(text);
+    }
+
+    public void publishervalidate(){
+        String text=(String) publisher.getText();
+        text=text.replaceAll(" ","_");
+        publisher.setText(text);
+    }
+
+    public void actorvalidate(){
+        String text=(String) actor.getText();
+        text=text.replaceAll(" ","_");
+        actor.setText(text);
     }
 
 }

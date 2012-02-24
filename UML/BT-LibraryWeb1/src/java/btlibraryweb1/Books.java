@@ -110,6 +110,8 @@ public class Books extends AbstractPageBean {
         Menu menudiv=(Menu)getBean("Menu");
         Hyperlink link3=menudiv.getHyperlink3();
         link3.setDisabled(true);
+        FormBook bookdiv=(FormBook) getBean("FormBook");
+        bookdiv.refresh_form();
     }
 
     /**
@@ -149,6 +151,18 @@ public class Books extends AbstractPageBean {
      */
     protected ApplicationBean1 getApplicationBean1() {
         return (ApplicationBean1) getBean("ApplicationBean1");
+    }
+
+    public String addbook1_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        TitlesApplication titlesdiv=(TitlesApplication)getBean("TitlesApplication");
+        String data1[]=titlesdiv.select_title();
+        FormBook bookdiv=(FormBook)getBean("FormBook");
+        String data2[]=bookdiv.form_book();
+        if(data1!=null && data2!=null)
+            getApplicationBean1().add_book(data1,data2);
+        return null;
     }
     
 }

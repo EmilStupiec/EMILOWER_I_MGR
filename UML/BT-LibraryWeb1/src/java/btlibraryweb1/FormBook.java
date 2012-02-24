@@ -8,6 +8,8 @@ package btlibraryweb1;
 import com.sun.rave.web.ui.appbase.AbstractFragmentBean;
 import com.sun.webui.jsf.component.TextField;
 import javax.faces.FacesException;
+import javax.faces.component.html.HtmlPanelGrid;
+import javax.faces.validator.LengthValidator;
 import javax.faces.validator.LongRangeValidator;
 
 /**
@@ -59,6 +61,51 @@ public class FormBook extends AbstractFragmentBean {
 
     public void setLongRangeValidator1(LongRangeValidator lrv) {
         this.longRangeValidator1 = lrv;
+    }
+    private HtmlPanelGrid booksApplicationPanel = new HtmlPanelGrid();
+
+    public HtmlPanelGrid getBooksApplicationPanel() {
+        return booksApplicationPanel;
+    }
+
+    public void setBooksApplicationPanel(HtmlPanelGrid hpg) {
+        this.booksApplicationPanel = hpg;
+    }
+    private HtmlPanelGrid booksapplicationpanel = new HtmlPanelGrid();
+
+    public HtmlPanelGrid getBooksapplicationpanel() {
+        return booksapplicationpanel;
+    }
+
+    public void setBooksapplicationpanel(HtmlPanelGrid hpg) {
+        this.booksapplicationpanel = hpg;
+    }
+    private TextField number1 = new TextField();
+
+    public TextField getNumber1() {
+        return number1;
+    }
+
+    public void setNumber1(TextField tf) {
+        this.number1 = tf;
+    }
+    private TextField period1 = new TextField();
+
+    public TextField getPeriod1() {
+        return period1;
+    }
+
+    public void setPeriod1(TextField tf) {
+        this.period1 = tf;
+    }
+    private LengthValidator lengthValidator1 = new LengthValidator();
+
+    public LengthValidator getLengthValidator1() {
+        return lengthValidator1;
+    }
+
+    public void setLengthValidator1(LengthValidator lv) {
+        this.lengthValidator1 = lv;
     }
     // </editor-fold>
 
@@ -128,4 +175,22 @@ public class FormBook extends AbstractFragmentBean {
         return (RequestBean1) getBean("RequestBean1");
     }
 
+    public void refresh_form(){
+        booksapplicationpanel.setRendered(true);
+        number1.setText("");
+        period1.setText("");
+    }
+
+    public String[] form_book(){
+        String what_book_type;
+        if(number1.getText().equals(""))
+            return null;
+        if(period1.getText().equals(""))
+            what_book_type="0";
+        else
+            what_book_type="1";
+        String data[]={what_book_type,(String)number1.getText(),
+                        (String)period1.getText()};
+        return data;
+    }
 }

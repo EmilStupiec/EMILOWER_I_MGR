@@ -6,7 +6,8 @@
 -->
 <div style="height: 150px; width: 250px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
     <f:subview id="FormTitle">
-        <h:panelGrid columns="2" id="titleapplicationpanel" style="height: 122px; left: 0px; top: 0px; position: absolute" width="240">
+        <h:panelGrid binding="#{FormTitle.titleapplicationpanel}" columns="2" id="titleapplicationpanel"
+            style="height: 122px; left: 0px; top: 0px; position: absolute" width="240">
             <webuijsf:label for="title" id="title_label" text="Title"/>
             <webuijsf:textField binding="#{FormTitle.title}" id="title" required="true"/>
             <webuijsf:label for="author" id="author_label" text="Author"/>

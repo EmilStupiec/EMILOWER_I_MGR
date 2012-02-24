@@ -8,6 +8,7 @@ package btlibraryweb1;
 import com.sun.rave.web.ui.appbase.AbstractFragmentBean;
 import com.sun.webui.jsf.component.TextField;
 import javax.faces.FacesException;
+import javax.faces.component.html.HtmlPanelGrid;
 
 /**
  * <p>Fragment bean that corresponds to a similarly named JSP page
@@ -39,6 +40,15 @@ public class FormPeriod extends AbstractFragmentBean {
 
     public void setPeriod(TextField tf) {
         this.period = tf;
+    }
+    private HtmlPanelGrid booksApplicationPanel = new HtmlPanelGrid();
+
+    public HtmlPanelGrid getBooksApplicationPanel() {
+        return booksApplicationPanel;
+    }
+
+    public void setBooksApplicationPanel(HtmlPanelGrid hpg) {
+        this.booksApplicationPanel = hpg;
     }
     // </editor-fold>
 
@@ -115,6 +125,22 @@ public class FormPeriod extends AbstractFragmentBean {
      */
     protected ApplicationBean1 getApplicationBean1() {
         return (ApplicationBean1) getBean("ApplicationBean1");
+    }
+
+    public void refresh_form(){
+        booksApplicationPanel.setRendered(true);
+        period.setText("");
+    }
+
+    public String form_book(){
+        String what_period;
+        if(period.getText().equals("")){
+            what_period="0";
+        }else{
+            what_period=(String)period.getText();
+        }
+        String data=what_period;
+        return data;
     }
 
 }

@@ -6,7 +6,11 @@
 package btlibraryweb1;
 
 import com.sun.rave.web.ui.appbase.AbstractApplicationBean;
+import com.sun.webui.jsf.model.Option;
+import java.util.ArrayList;
+import java.util.Iterator;
 import javax.faces.FacesException;
+import library1.TFacade;
 
 /**
  * <p>Application scope data bean for your application.  Create properties
@@ -76,7 +80,85 @@ public class ApplicationBean1 extends AbstractApplicationBean {
         // *after* managed components are initialized
         // TODO - add your own initialization code here
     }
+    private TFacade facade=new TFacade();
+    private Option titles_[]=new Option[0];
+    private Option books_[]=new Option[0];
 
+    public TFacade geTFacade(){
+        return facade;
+    }
+
+    public void seTFacade(TFacade facade){
+        this.facade=facade;
+    }
+
+    public void add_title(String data[]){
+        facade.add_title_book(data);
+    }
+
+    public Option[] getTitles_(){
+        return titles_;
+    }
+
+    public void setTitles_(Option[] titles){
+        titles_=titles;
+    }
+
+    public void prepare_titles(String data[]){
+        add_title(data);
+        preparetitles();
+    }
+
+    public void preparetitles(){
+        ArrayList<String> atitles=facade.gettitle_books();
+        int amount=atitles.size();
+        if(amount>0){
+            Option help[]=new Option[amount];
+            Iterator <String>iterator=atitles.iterator();
+            int i=0;
+            while(iterator.hasNext()){
+                help[i++]=new Option(Integer.toString(i),iterator.next());
+            }
+            titles_=help;
+        }
+    }
+
+    public Option[] getBooks_(){
+        return books_;
+    }
+
+    public void setBooks(Option[] books){
+        books_=books;
+    }
+    public void prepare_books(int number){
+        if(!facade.getmTitle_books().isEmpty())
+            preparebooks(facade.getmTitle_books().get(number).getbooks());
+    }
+    public void prepare_books(String data[]){
+        preparebooks(facade.Search_title_book(data).getbooks());
+    }
+
+    public void preparebooks(ArrayList <String>books){
+        if(books==null){
+            books_=null;
+            return;
+        }
+        int amount=books.size();
+        if(amount>0){
+            Option help[]=new Option[amount];
+            Iterator<String>iterator=books.iterator();
+            int i=0;
+            while(iterator.hasNext()){
+                help[i++]=new Option(Integer.toString(i),iterator.next());
+            }
+            books_=help;
+        }else
+            books_=new Option[0];
+    }
+
+    public void add_book(String data1[],String data2[]){
+        preparebooks(facade.add_book(data1,data2).getbooks());
+    }
     /**
      * <p>This method is called when this bean is removed from
      * application scope.  Typically, this occurs as a result of
@@ -102,5 +184,14 @@ public class ApplicationBean1 extends AbstractApplicationBean {
     @Override
     public String getLocaleCharacterEncoding() {
         return super.getLocaleCharacterEncoding();
+    }
+
+    void search_accessible_book(String[] data1, String data2) {
+        Object search_book=facade.Search_accessible_book(data1,data2);
+        if(search_book!=null){
+            Option help[]=new Option[1];
+            help[0]=new Option("1",search_book.toString());
+            books_=new Option[0];
+        }
     }
 }

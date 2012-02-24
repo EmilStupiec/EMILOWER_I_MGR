@@ -110,6 +110,8 @@ public class Titles extends AbstractPageBean {
         Menu menudiv=(Menu)getBean("Menu");
         Hyperlink link2=menudiv.getHyperlink2();
         link2.setDisabled(true);
+        FormTitle titlediv=(FormTitle)getBean("FormTitle");
+        titlediv.refresh_form();
     }
 
     /**
@@ -149,6 +151,16 @@ public class Titles extends AbstractPageBean {
      */
     protected ApplicationBean1 getApplicationBean1() {
         return (ApplicationBean1) getBean("ApplicationBean1");
+    }
+
+    public String addtitle_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        FormTitle titlediv=(FormTitle)getBean("FormTitle");
+        String data[]=titlediv.form_title();
+        if (data!=null)
+            getApplicationBean1().prepare_titles(data);
+        return null;
     }
     
 }

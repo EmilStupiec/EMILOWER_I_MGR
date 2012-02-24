@@ -20,9 +20,12 @@
                         <div style="left: 0px; top: 144px; position: absolute">
                             <jsp:directive.include file="Menu.jspf"/>
                         </div>
-                        <jsp:directive.include file="TitlesApplication.jspf" style="left: 384px; top: 312px; position: absolute"/>
-                        <webuijsf:button binding="#{Books.addbook1}" id="addbook1" style="left: 311px; top: 240px; position: absolute" text="Add book"/>
-                        <div style="left: 24px; top: 384px; position: absolute">
+                        <div  style="left: 384px; top: 312px; position: absolute">
+                            <jsp:directive.include file="TitlesApplication.jspf"/>
+                        </div>
+                        <webuijsf:button actionExpression="#{Books.addbook1_action}" binding="#{Books.addbook1}" id="addbook1"
+                            style="left: 311px; top: 240px; position: absolute" text="Add book"/>
+                        <div style="left: 120px; top: 360px; position: absolute">
                             <jsp:directive.include file="BooksApplication.jspf"/>
                         </div>
                         <div style="left: 312px; top: 120px; position: absolute">

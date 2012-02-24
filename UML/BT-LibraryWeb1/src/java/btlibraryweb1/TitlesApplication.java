@@ -7,8 +7,10 @@ package btlibraryweb1;
 
 import com.sun.rave.web.ui.appbase.AbstractFragmentBean;
 import com.sun.webui.jsf.component.DropDown;
+import com.sun.webui.jsf.model.Option;
 import com.sun.webui.jsf.model.SingleSelectOptionsList;
 import javax.faces.FacesException;
+import javax.faces.event.ValueChangeEvent;
 
 /**
  * <p>Fragment bean that corresponds to a similarly named JSP page
@@ -31,15 +33,6 @@ public class TitlesApplication extends AbstractFragmentBean {
      * here is subject to being replaced.</p>
      */
     private void _init() throws Exception {
-    }
-    private SingleSelectOptionsList titlesDefaultOptions = new SingleSelectOptionsList();
-
-    public SingleSelectOptionsList getTitlesDefaultOptions() {
-        return titlesDefaultOptions;
-    }
-
-    public void setTitlesDefaultOptions(SingleSelectOptionsList ssol) {
-        this.titlesDefaultOptions = ssol;
     }
     private DropDown titles = new DropDown();
 
@@ -125,6 +118,35 @@ public class TitlesApplication extends AbstractFragmentBean {
      */
     protected RequestBean1 getRequestBean1() {
         return (RequestBean1) getBean("RequestBean1");
+    }
+
+    public String[] select_title(){
+        String what;
+        String select=(String)titles.getSelected();
+        if(select==null)
+            return null;
+        int nr=Integer.parseInt(select);
+        if(nr==0)
+            return null;
+        Option help[]=getApplicationBean1().getTitles_();
+        String help1=help[nr-1].getLabel();
+        String help2[]=help1.split(" ");
+        if(help2.length==0){
+            help1="";
+            what="0";
+        }else{
+            help1=help2[9];
+            what="2";
+        }
+        String data1[]={what,(String) help2[5],help1};
+        return data1;
+    }
+
+    public void titles_processValueChange(ValueChangeEvent event) {
+        String data[]=select_title();
+        if(data!=null){
+            getApplicationBean1().prepare_books(data);
+        }
     }
 
 }
