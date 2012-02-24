@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : FormBook
+    Created on : 2012-02-24, 11:26:42
+    Author     : emil
+-->
+<div style="height: 100px; width: 200px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core">
+    <f:subview id="FormBook">
+        <h:panelGrid columns="2" id="booksApplicationPanel" style="height: 48px; left: 0px; top: 0px; position: absolute" width="240">
+            <webuijsf:label for="number" id="label1" text="Number"/>
+            <webuijsf:textField binding="#{FormBook.number}" id="number" required="true" validatorExpression="#{FormBook.longRangeValidator1.validate}"/>
+            <webuijsf:label id="label2" text="Period"/>
+            <webuijsf:textField binding="#{FormBook.period}" id="period"/>
+        </h:panelGrid>
+    </f:subview>
+</div>

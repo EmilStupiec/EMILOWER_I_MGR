@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : Menu
+    Created on : 2012-02-22, 09:54:47
+    Author     : lab05
+-->
+<div style="height: 200px; width: 280px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+    <f:subview id="Menu">
+        <webuijsf:hyperlink actionExpression="#{Menu.hyperlink1_action}" binding="#{Menu.hyperlink1}" id="hyperlink1"
+            style="left: 24px; top: 24px; position: absolute" text="Main Page" url="/faces/Page1.jsp"/>
+        <webuijsf:hyperlink actionExpression="#{Menu.hyperlink2_action}" binding="#{Menu.hyperlink2}" id="hyperlink2"
+            style="left: 24px; top: 72px; position: absolute" text="Add titles in the application" url="/faces/Titles.jsp"/>
+        <webuijsf:hyperlink actionExpression="#{Menu.hyperlink3_action}" binding="#{Menu.hyperlink3}" id="hyperlink3"
+            style="left: 24px; top: 120px; position: absolute" text="Add books in application" url="/faces/Books.jsp"/>
+        <webuijsf:hyperlink actionExpression="#{Menu.hyperlink4_action}" binding="#{Menu.hyperlink4}" id="hyperlink4"
+            style="left: 24px; top: 168px; position: absolute" text="Check an accessible book of a select title" url="/faces/Accessible.jsp"/>
+    </f:subview>
+</div>
