@@ -1,0 +1,13 @@
+
+firing sequence- is a sequence of transistions which tansform some markig M to marking M'
+
+reachability- is defined by chcecking if any requested (or some given)  marking may be reached 
+
+liveness-Petri net is live if each of its trasitions are live. Transition t is live if it can be fired for any of reachable marking.
+
+boudedness- petri net is bouded if capacity of each place in the  net is definied.
+
+reversible net- A Petri Net is said to be reversible if for each marking M, M0 is reachable from M. So in a reversible net one can alwayes get back to the initial marking.
+
+coverable marking - If transition t can be fired in marking M, then t can be fired in M’.
+
