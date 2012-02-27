@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : BooksApplication
+    Created on : 2012-02-24, 11:24:44
+    Author     : emil
+-->
+<div style="height: 200px; width: 250px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+    <f:subview id="BooksApplication">
+        <webuijsf:dropDown binding="#{BooksApplication.dropDown1}" id="dropDown1" items="#{ApplicationBean1.books_}" style="left: 0px; top: 0px; position: absolute"/>
+    </f:subview>
+</div>
