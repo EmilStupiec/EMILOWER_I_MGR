@@ -20,10 +20,10 @@
                         <div style="left: 0px; top: 144px; position: absolute">
                             <jsp:directive.include file="Menu.jspf"/>
                         </div>
-                        <div style="left: 552px; top: 144px; position: absolute">
+                        <div style="left: 312px; top: 360px; position: absolute">
                             <jsp:directive.include file="BooksApplication.jspf"/>
                         </div>
-                        <div  style="left: 192px; top: 360px; position: absolute">
+                        <div  style="left: 550px; top: 158px; position: absolute">
                             <jsp:directive.include file="TitlesApplication.jspf"/>
                         </div>
                         <webuijsf:button actionExpression="#{Accessible.search1_action}" binding="#{Accessible.search1}" id="search1"

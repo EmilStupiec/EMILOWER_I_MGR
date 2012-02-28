@@ -183,14 +183,18 @@ public class FormBook extends AbstractFragmentBean {
 
     public String[] form_book(){
         String what_book_type;
-        if(number1.getText().equals(""))
+        if(number1.getText().equals("")){
             return null;
-        if(period1.getText().equals(""))
+        }
+        if(period1.getText().equals("")){
             what_book_type="0";
-        else
+            String data[]={what_book_type,(String)number1.getText()};
+            return data;
+        }else{
             what_book_type="1";
-        String data[]={what_book_type,(String)number1.getText(),
+            String data[]={what_book_type,(String)number1.getText(),
                         (String)period1.getText()};
-        return data;
+            return data;
+        }
     }
 }
