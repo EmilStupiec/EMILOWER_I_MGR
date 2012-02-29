@@ -181,13 +181,17 @@ public class FormTitle extends AbstractFragmentBean {
         String what_title_book_type;
         if(actor.getText().equals("")){
             what_title_book_type="1";
+            String data[]={what_title_book_type,(String) author.getText(),
+            (String) title.getText(),(String) isbn.getText(),
+            (String) publisher.getText()};
+            return data;
         }else{
             what_title_book_type="3";
+            String data[]={what_title_book_type,(String) author.getText(),
+            (String) title.getText(),(String) isbn.getText(),
+            (String) publisher.getText(),(String) actor.getText()};
+            return data;
         }
-        String data[]={what_title_book_type,(String) author.getText(),
-        (String) title.getText(),(String) isbn.getText(),
-        (String) publisher.getText(),(String) actor.getText()};
-        return data;
     }
 
     public void titlevalidate(){
