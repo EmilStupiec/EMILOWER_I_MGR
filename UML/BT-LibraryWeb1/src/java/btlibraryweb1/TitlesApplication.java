@@ -120,7 +120,7 @@ public class TitlesApplication extends AbstractFragmentBean {
         return (RequestBean1) getBean("RequestBean1");
     }
 
-    public String[] select_title(){
+public String[] select_title(){
         String what;
         String select=(String)titles.getSelected();
         if(select==null)
@@ -131,15 +131,17 @@ public class TitlesApplication extends AbstractFragmentBean {
         Option help[]=getApplicationBean1().getTitles_();
         String help1=help[nr-1].getLabel();
         String help2[]=help1.split(" ");
-        if(help2.length==0){
+        if(help2.length==5){
             help1="";
             what="0";
+            String data1[]={what,(String) help2[1]};
+            return data1;
         }else{
-            help1=help2[9];
+            help1=help2[5];
             what="2";
+            String data1[]={what,(String) help2[1],help1};
+            return data1;
         }
-        String data1[]={what,(String) help2[5],help1};
-        return data1;
     }
 
     public void titles_processValueChange(ValueChangeEvent event) {

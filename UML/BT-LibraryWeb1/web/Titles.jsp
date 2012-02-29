@@ -26,13 +26,10 @@
                         <div style="height: 190px; left: 288px; top: 144px; position: absolute; width: 238px">
                             <jsp:directive.include file="FormTitle.jspf"/>
                         </div>
-                        <div style="left: 24px; top: 384px; position: absolute">
-                            <jsp:directive.include file="BooksApplication.jspf"/>
-                        </div>
-                        <div  style="left: 384px; top: 408px; position: absolute">
+                        <div style="left: 312px; top: 360px; position: absolute">
                             <jsp:directive.include file="TitlesApplication.jspf"/>
                         </div>
-                        </webuijsf:form>
+                    </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
         </webuijsf:page>
