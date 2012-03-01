@@ -6,7 +6,7 @@
 package btlibraryweb1;
 
 import com.sun.rave.web.ui.appbase.AbstractFragmentBean;
-import com.sun.webui.jsf.component.Hyperlink;
+import com.sun.webui.jsf.model.DefaultTableDataProvider;
 import javax.faces.FacesException;
 
 /**
@@ -16,12 +16,12 @@ import javax.faces.FacesException;
  * lifecycle methods and event handlers where you may add behavior
  * to respond to incoming events.</p>
  *
- * @version Menu.java
- * @version Created on 2012-02-22, 09:54:48
- * @author lab05
+ * @version Fragment1.java
+ * @version Created on 2012-02-29, 22:33:33
+ * @author wera
  */
 
-public class Menu extends AbstractFragmentBean {
+public class Fragment1 extends AbstractFragmentBean {
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
     /**
@@ -31,72 +31,18 @@ public class Menu extends AbstractFragmentBean {
      */
     private void _init() throws Exception {
     }
-    private Hyperlink hyperlink1 = new Hyperlink();
+    private DefaultTableDataProvider defaultTableDataProvider = new DefaultTableDataProvider();
 
-    public Hyperlink getHyperlink1() {
-        return hyperlink1;
+    public DefaultTableDataProvider getDefaultTableDataProvider() {
+        return defaultTableDataProvider;
     }
 
-    public void setHyperlink1(Hyperlink h) {
-        this.hyperlink1 = h;
-    }
-    private Hyperlink hyperlink2 = new Hyperlink();
-
-    public Hyperlink getHyperlink2() {
-        return hyperlink2;
-    }
-
-    public void setHyperlink2(Hyperlink h) {
-        this.hyperlink2 = h;
-    }
-    private Hyperlink hyperlink3 = new Hyperlink();
-
-    public Hyperlink getHyperlink3() {
-        return hyperlink3;
-    }
-
-    public void setHyperlink3(Hyperlink h) {
-        this.hyperlink3 = h;
-    }
-    private Hyperlink hyperlink4 = new Hyperlink();
-
-    public Hyperlink getHyperlink4() {
-        return hyperlink4;
-    }
-
-    public void setHyperlink4(Hyperlink h) {
-        this.hyperlink4 = h;
-    }
-    private Hyperlink hyperlink5 = new Hyperlink();
-
-    public Hyperlink getHyperlink5() {
-        return hyperlink5;
-    }
-
-    public void setHyperlink5(Hyperlink h) {
-        this.hyperlink5 = h;
-    }
-    private Hyperlink hyperlink6 = new Hyperlink();
-
-    public Hyperlink getHyperlink6() {
-        return hyperlink6;
-    }
-
-    public void setHyperlink6(Hyperlink h) {
-        this.hyperlink6 = h;
-    }
-    private Hyperlink hyperlink7 = new Hyperlink();
-
-    public Hyperlink getHyperlink7() {
-        return hyperlink7;
-    }
-
-    public void setHyperlink7(Hyperlink h) {
-        this.hyperlink7 = h;
+    public void setDefaultTableDataProvider(DefaultTableDataProvider dtdp) {
+        this.defaultTableDataProvider = dtdp;
     }
     // </editor-fold>
 
-    public Menu() {
+    public Fragment1() {
     }
 
     /**
@@ -169,36 +115,6 @@ public class Menu extends AbstractFragmentBean {
      */
     protected ApplicationBean1 getApplicationBean1() {
         return (ApplicationBean1) getBean("ApplicationBean1");
-    }
-
-    public String hyperlink2_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        return null;
-    }
-
-    public String hyperlink3_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        return null;
-    }
-
-    public String hyperlink4_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        return null;
-    }
-
-    public String hyperlink1_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        return null;
-    }
-
-    public String hyperlink5_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        return null;
     }
 
 }
