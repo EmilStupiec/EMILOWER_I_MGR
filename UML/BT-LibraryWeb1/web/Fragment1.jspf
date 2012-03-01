@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : Fragment1
+    Created on : 2012-02-29, 22:33:33
+    Author     : wera
+-->
+<div style="height: 250px; width: 600px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+    <f:subview id="Fragment1">
+        <webuijsf:table augmentTitle="false" id="titles_in_database" paginateButton="true"
+            style="height: 221px; left: 0px; top: 0px; position: absolute; width: 600px" title="Titles in Database" width="600">
+            <webuijsf:tableRowGroup id="tableRowGroup1" rows="10" sourceData="#{Fragment1.defaultTableDataProvider}" sourceVar="currentRow">
+                <webuijsf:tableColumn headerText="column1" id="tableColumn1" sort="column1">
+                    <webuijsf:staticText id="staticText1" text="#{currentRow.value['column1']}"/>
+                </webuijsf:tableColumn>
+                <webuijsf:tableColumn headerText="column2" id="tableColumn2" sort="column2">
+                    <webuijsf:staticText id="staticText2" text="#{currentRow.value['column2']}"/>
+                </webuijsf:tableColumn>
+                <webuijsf:tableColumn headerText="column3" id="tableColumn3" sort="column3">
+                    <webuijsf:staticText id="staticText3" text="#{currentRow.value['column3']}"/>
+                </webuijsf:tableColumn>
+            </webuijsf:tableRowGroup>
+        </webuijsf:table>
+    </f:subview>
+</div>

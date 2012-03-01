@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : TitlesApplication
+    Created on : 2012-02-24, 11:14:30
+    Author     : emil
+-->
+<div style="height: 200px; width: 250px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+    <f:subview id="TitlesApplication">
+        <webuijsf:dropDown binding="#{TitlesApplication.titles}" id="titles" items="#{ApplicationBean1.titles_}"
+            onChange="webui.suntheme4_2.common.timeoutSubmitForm(this.form, 'titles');" style="left: 0px; top: 0px; position: absolute" valueChangeListenerExpression="#{TitlesApplication.titles_processValueChange}"/>
+    </f:subview>
+</div>
