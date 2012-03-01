@@ -76,7 +76,34 @@
         <managed-bean-class>btlibraryweb1.FormPeriod</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>DataBaseTitles</managed-bean-name>
+        <managed-bean-class>btlibraryweb1.DataBaseTitles</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>DataBaseTitle</managed-bean-name>
+        <managed-bean-class>btlibraryweb1.DataBaseTitle</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>DataBaseBooks</managed-bean-name>
+        <managed-bean-class>btlibraryweb1.DataBaseBooks</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>Fragment1</managed-bean-name>
+        <managed-bean-class>btlibraryweb1.Fragment1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>BooksApplicationfragment</managed-bean-name>
+        <managed-bean-class>btlibraryweb1.BooksApplicationfragment</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>
+
+
 
 
 
