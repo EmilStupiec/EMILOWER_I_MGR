@@ -67,6 +67,33 @@ public class Menu extends AbstractFragmentBean {
     public void setHyperlink4(Hyperlink h) {
         this.hyperlink4 = h;
     }
+    private Hyperlink hyperlink5 = new Hyperlink();
+
+    public Hyperlink getHyperlink5() {
+        return hyperlink5;
+    }
+
+    public void setHyperlink5(Hyperlink h) {
+        this.hyperlink5 = h;
+    }
+    private Hyperlink hyperlink6 = new Hyperlink();
+
+    public Hyperlink getHyperlink6() {
+        return hyperlink6;
+    }
+
+    public void setHyperlink6(Hyperlink h) {
+        this.hyperlink6 = h;
+    }
+    private Hyperlink hyperlink7 = new Hyperlink();
+
+    public Hyperlink getHyperlink7() {
+        return hyperlink7;
+    }
+
+    public void setHyperlink7(Hyperlink h) {
+        this.hyperlink7 = h;
+    }
     // </editor-fold>
 
     public Menu() {
@@ -163,6 +190,12 @@ public class Menu extends AbstractFragmentBean {
     }
 
     public String hyperlink1_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return null;
+    }
+
+    public String hyperlink5_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return null;

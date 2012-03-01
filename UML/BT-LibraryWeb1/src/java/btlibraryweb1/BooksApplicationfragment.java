@@ -6,11 +6,8 @@
 package btlibraryweb1;
 
 import com.sun.rave.web.ui.appbase.AbstractFragmentBean;
-import com.sun.webui.jsf.component.DropDown;
-import com.sun.webui.jsf.model.Option;
-import com.sun.webui.jsf.model.SingleSelectOptionsList;
+import com.sun.webui.jsf.model.DefaultTableDataProvider;
 import javax.faces.FacesException;
-import javax.faces.event.ValueChangeEvent;
 
 /**
  * <p>Fragment bean that corresponds to a similarly named JSP page
@@ -19,12 +16,12 @@ import javax.faces.event.ValueChangeEvent;
  * lifecycle methods and event handlers where you may add behavior
  * to respond to incoming events.</p>
  *
- * @version TitlesApplication.java
- * @version Created on 2012-02-24, 11:14:30
- * @author emil
+ * @version BooksApplicationfragment.java
+ * @version Created on 2012-03-01, 11:31:45
+ * @author wera
  */
 
-public class TitlesApplication extends AbstractFragmentBean {
+public class BooksApplicationfragment extends AbstractFragmentBean {
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
     /**
@@ -34,18 +31,18 @@ public class TitlesApplication extends AbstractFragmentBean {
      */
     private void _init() throws Exception {
     }
-    private DropDown titles = new DropDown();
+    private DefaultTableDataProvider defaultTableDataProvider = new DefaultTableDataProvider();
 
-    public DropDown getTitles() {
-        return titles;
+    public DefaultTableDataProvider getDefaultTableDataProvider() {
+        return defaultTableDataProvider;
     }
 
-    public void setTitles(DropDown dd) {
-        this.titles = dd;
+    public void setDefaultTableDataProvider(DefaultTableDataProvider dtdp) {
+        this.defaultTableDataProvider = dtdp;
     }
     // </editor-fold>
 
-    public TitlesApplication() {
+    public BooksApplicationfragment() {
     }
 
     /**
@@ -98,8 +95,8 @@ public class TitlesApplication extends AbstractFragmentBean {
      *
      * @return reference to the scoped data bean
      */
-    protected SessionBean1 getSessionBean1() {
-        return (SessionBean1) getBean("SessionBean1");
+    protected RequestBean1 getRequestBean1() {
+        return (RequestBean1) getBean("RequestBean1");
     }
 
     /**
@@ -116,37 +113,8 @@ public class TitlesApplication extends AbstractFragmentBean {
      *
      * @return reference to the scoped data bean
      */
-    protected RequestBean1 getRequestBean1() {
-        return (RequestBean1) getBean("RequestBean1");
-    }
-
-    public String[] select_title(){
-        String what;
-        String select=(String)titles.getSelected();
-        if(select==null)
-            return null;
-        int nr=Integer.parseInt(select);
-        if(nr==0)
-            return null;
-        Option help[]=getApplicationBean1().getTitles_();
-        String help1=help[nr-1].getLabel();
-        String help2[]=help1.split(" ");
-        if(help2.length==0){
-            help1="";
-            what="0";
-        }else{
-            help1=help2[5];
-            what="2";
-        }
-        String data1[]={what,(String) help2[5],help1};
-        return data1;
-    }
-
-    public void titles_processValueChange(ValueChangeEvent event) {
-        String data[]=select_title();
-        if(data!=null){
-            getApplicationBean1().prepare_books(data);
-        }
+    protected SessionBean1 getSessionBean1() {
+        return (SessionBean1) getBean("SessionBean1");
     }
 
 }
