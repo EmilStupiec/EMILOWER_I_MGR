@@ -110,8 +110,16 @@ public class DataBaseTitles extends AbstractPageBean {
         Menu menudiv = (Menu) getBean("Menu");
         Hyperlink link6= menudiv.getHyperlink6();
         link6.setDisabled(true);
+        getApplicationBean1().updateTitles();
+    }
+    public String addtitles_database_action1(){
+        getApplicationBean1().addtitles_DataBase();
+        return null;
     }
 
+    protected ApplicationBean1 getApplicationBean1() {
+        return (ApplicationBean1) getBean("ApplicationBean1");
+    }
     /**
      * <p>Callback method that is called after rendering is completed for
      * this request, if <code>init()</code> was called (regardless of whether

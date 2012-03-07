@@ -31,15 +31,6 @@ public class Fragment1 extends AbstractFragmentBean {
      */
     private void _init() throws Exception {
     }
-    private DefaultTableDataProvider defaultTableDataProvider = new DefaultTableDataProvider();
-
-    public DefaultTableDataProvider getDefaultTableDataProvider() {
-        return defaultTableDataProvider;
-    }
-
-    public void setDefaultTableDataProvider(DefaultTableDataProvider dtdp) {
-        this.defaultTableDataProvider = dtdp;
-    }
     // </editor-fold>
 
     public Fragment1() {

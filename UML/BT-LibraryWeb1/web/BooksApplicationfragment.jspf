@@ -6,17 +6,19 @@
 -->
 <div style="height: 250px; width: 600px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
     <f:subview id="BooksApplicationfragment">
-        <webuijsf:table augmentTitle="false" id="books_in_DataBAse" paginateButton="true" style="height: 221px; left: 0px; top: 0px; position: absolute"
-            title="Table" width="600">
-            <webuijsf:tableRowGroup id="tableRowGroup1" rows="10" sourceData="#{BooksApplicationfragment.defaultTableDataProvider}" sourceVar="currentRow">
-                <webuijsf:tableColumn headerText="column1" id="tableColumn1" sort="column1">
-                    <webuijsf:staticText id="staticText1" text="#{currentRow.value['column1']}"/>
+        <webuijsf:table augmentTitle="false" id="books_in_DataBAse" style="height: 221px; left: 0px; top: 0px; position: absolute" title="Table" width="0">
+            <webuijsf:tableRowGroup id="tableRowGroup1" rows="5" sourceData="#{ApplicationBean1.books}" sourceVar="currentRow">
+                <webuijsf:tableColumn headerText="id" id="tableColumn1" sort="id">
+                    <webuijsf:staticText id="staticText1" text="#{currentRow.value['id']}"/>
                 </webuijsf:tableColumn>
-                <webuijsf:tableColumn headerText="column2" id="tableColumn2" sort="column2">
-                    <webuijsf:staticText id="staticText2" text="#{currentRow.value['column2']}"/>
+                <webuijsf:tableColumn headerText="mTitle_book" id="tableColumn2" sort="mTitle_book">
+                    <webuijsf:staticText id="staticText2" text="#{currentRow.value['mTitle_book']}"/>
                 </webuijsf:tableColumn>
-                <webuijsf:tableColumn headerText="column3" id="tableColumn3" sort="column3">
-                    <webuijsf:staticText id="staticText3" text="#{currentRow.value['column3']}"/>
+                <webuijsf:tableColumn headerText="number" id="tableColumn3" sort="number">
+                    <webuijsf:staticText id="staticText3" text="#{currentRow.value['number']}"/>
+                </webuijsf:tableColumn>
+                <webuijsf:tableColumn headerText="period" id="tableColumn4" sort="period">
+                    <webuijsf:staticText id="staticText4" text="#{currentRow.value['period']}"/>
                 </webuijsf:tableColumn>
             </webuijsf:tableRowGroup>
         </webuijsf:table>

@@ -6,17 +6,23 @@
 -->
 <div style="height: 250px; width: 600px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
     <f:subview id="Fragment1">
-        <webuijsf:table augmentTitle="false" id="titles_in_database" paginateButton="true"
-            style="height: 221px; left: 0px; top: 0px; position: absolute; width: 600px" title="Titles in Database" width="600">
-            <webuijsf:tableRowGroup id="tableRowGroup1" rows="10" sourceData="#{Fragment1.defaultTableDataProvider}" sourceVar="currentRow">
-                <webuijsf:tableColumn headerText="column1" id="tableColumn1" sort="column1">
-                    <webuijsf:staticText id="staticText1" text="#{currentRow.value['column1']}"/>
+        <webuijsf:table augmentTitle="false" id="titles_in_database" style="height: 221px; left: 0px; top: 0px; position: absolute; width: 600px"
+            title="Titles in Database" width="0">
+            <webuijsf:tableRowGroup id="tableRowGroup1" rows="5" sourceData="#{ApplicationBean1.titles}" sourceVar="currentRow">
+                <webuijsf:tableColumn headerText="ISBN" id="tableColumn1" sort="ISBN">
+                    <webuijsf:staticText id="staticText1" text="#{currentRow.value['ISBN']}"/>
                 </webuijsf:tableColumn>
-                <webuijsf:tableColumn headerText="column2" id="tableColumn2" sort="column2">
-                    <webuijsf:staticText id="staticText2" text="#{currentRow.value['column2']}"/>
+                <webuijsf:tableColumn headerText="actor" id="tableColumn2" sort="actor">
+                    <webuijsf:staticText id="staticText2" text="#{currentRow.value['actor']}"/>
                 </webuijsf:tableColumn>
-                <webuijsf:tableColumn headerText="column3" id="tableColumn3" sort="column3">
-                    <webuijsf:staticText id="staticText3" text="#{currentRow.value['column3']}"/>
+                <webuijsf:tableColumn headerText="author" id="tableColumn3" sort="author">
+                    <webuijsf:staticText id="staticText3" text="#{currentRow.value['author']}"/>
+                </webuijsf:tableColumn>
+                <webuijsf:tableColumn headerText="publisher" id="tableColumn4" sort="publisher">
+                    <webuijsf:staticText id="staticText4" text="#{currentRow.value['publisher']}"/>
+                </webuijsf:tableColumn>
+                <webuijsf:tableColumn headerText="title" id="tableColumn5" sort="title">
+                    <webuijsf:staticText id="staticText5" text="#{currentRow.value['title']}"/>
                 </webuijsf:tableColumn>
             </webuijsf:tableRowGroup>
         </webuijsf:table>

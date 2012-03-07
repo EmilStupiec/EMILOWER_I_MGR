@@ -38,7 +38,8 @@
                                 </h:panelGrid>
                             </f:subview>
                         </div>
-                        <webuijsf:button binding="#{DataBaseTitle.addtitle_database}" id="addtitle_database" style="left: 575px; top: 144px; position: absolute" text="addtitle_DataBase"/>
+                        <webuijsf:button actionExpression="#{DataBaseTitle.addtitle_database_action}" id="addtitle_database"
+                            style="left: 575px; top: 144px; position: absolute" text="addtitle_DataBase"/>
                         <webuijsf:messageGroup id="messageGroup1" style="height: 94px; left: 576px; top: 192px; position: absolute; width: 118px"/>
                         <div style="position: absolute; left: 312px; top: 336px">
                             <jsp:directive.include file="Fragment1.jspf"/>

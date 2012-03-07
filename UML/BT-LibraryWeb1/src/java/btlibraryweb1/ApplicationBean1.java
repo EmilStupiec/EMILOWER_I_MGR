@@ -7,10 +7,14 @@ package btlibraryweb1;
 
 import com.sun.rave.web.ui.appbase.AbstractApplicationBean;
 import com.sun.webui.jsf.model.Option;
+import domainstore.TBookContoller;
+import domainstore.TTitle_bookController;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.faces.FacesException;
+import library1.TBook;
 import library1.TFacade;
+import library1.TTitle_book;
 
 /**
  * <p>Application scope data bean for your application.  Create properties
@@ -79,10 +83,34 @@ public class ApplicationBean1 extends AbstractApplicationBean {
         // Perform application initialization that must complete
         // *after* managed components are initialized
         // TODO - add your own initialization code here
+        updateTitles();
+        updateBooks();
+        updateTfacade();
+        preparetitles();
     }
     private TFacade facade=new TFacade();
     private Option titles_[]=new Option[0];
     private Option books_[]=new Option[0];
+
+    private TTitle_book titles[];
+    private TBook books[];
+
+   public TBook[] getBooks(){
+        return books;
+    }
+
+    public void setBooks(TBook[] books){
+        this.books=books;
+    }
+
+
+    public TTitle_book[] getTitles(){
+        return titles;
+    }
+
+    public void setTitles(TTitle_book[] titles){
+        this.titles=titles;
+    }
 
     public TFacade geTFacade(){
         return facade;
@@ -192,6 +220,51 @@ public class ApplicationBean1 extends AbstractApplicationBean {
             Option help[]=new Option[1];
             help[0]=new Option("1",search_book.toString());
             books_=new Option[0];
+        }
+    }
+
+    public void updateTitles(){
+        TTitle_bookController titleController = new TTitle_bookController();
+        titles=titleController.getTTitle_books_();
+    }
+    public void updateBooks(){
+        TBookContoller bookContoller=new TBookContoller();
+        books=bookContoller.getTBooks_();
+    }
+    public void updateTfacade(){
+        for(int i=0;i<titles.length;i++){
+            facade.getmTitle_books().add(titles[i]);
+        }
+        Iterator it=facade.getmTitle_books().iterator();
+        while(it.hasNext()){
+            TTitle_book title=(TTitle_book) it.next();
+            for(int j=0;j<books.length;j++){
+                TTitle_book  title1=books[j].getmTitle_book();
+                if(title!=null){
+                    if(title1.equals(title)){
+                        title.getmBooks().add(books[j]);
+                    }
+                }
+            }
+        }
+    }
+
+    public void addtitles_DataBase(){
+        TTitle_bookController titleController=new TTitle_bookController();
+        titleController.addTTitle_books(facade.getmTitle_books());
+    }
+
+    public void addbooks_DataBase(){
+        TBookContoller bookController=new TBookContoller();
+        bookController.addTBooks(facade.getmTitle_books());
+    }
+
+    public void addtitle_DataBase(String data[]){
+        TTitle_bookController titleController=new TTitle_bookController();
+        TTitle_book title=facade.add_title_book(data);
+        if(title!=null){
+            preparetitles();
+            titleController.AddTTitle_book(title);
         }
     }
 }

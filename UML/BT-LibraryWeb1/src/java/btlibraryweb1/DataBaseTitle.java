@@ -32,15 +32,6 @@ public class DataBaseTitle extends AbstractPageBean {
      */
     private void _init() throws Exception {
     }
-    private Button addtitle_database = new Button();
-
-    public Button getAddtitle_database() {
-        return addtitle_database;
-    }
-
-    public void setAddtitle_database(Button b) {
-        this.addtitle_database = b;
-    }
 
     // </editor-fold>
 
@@ -110,9 +101,12 @@ public class DataBaseTitle extends AbstractPageBean {
         Menu menudiv = (Menu) getBean("Menu");
         Hyperlink link5= menudiv.getHyperlink5();
         link5.setDisabled(true);
-
+        getApplicationBean1().updateTitles();
+        FormTitle titlediv=(FormTitle) getBean("FormTitle");
+        titlediv.refresh_form();
     }
 
+    
     /**
      * <p>Callback method that is called after rendering is completed for
      * this request, if <code>init()</code> was called (regardless of whether
@@ -150,6 +144,17 @@ public class DataBaseTitle extends AbstractPageBean {
      */
     protected ApplicationBean1 getApplicationBean1() {
         return (ApplicationBean1) getBean("ApplicationBean1");
+    }
+
+    public String addtitle_database_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        FormTitle titlediv=(FormTitle) getBean("FormTitle");
+        String data[] = titlediv.form_title();
+        if(data!=null){
+            getApplicationBean1().addtitle_DataBase(data);
+        }
+        return null;
     }
     
 }

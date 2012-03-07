@@ -20,8 +20,8 @@
                         <div style="left: 0px; top: 144px; position: absolute">
                             <jsp:directive.include file="Menu.jspf"/>
                         </div>
-                        <webuijsf:button binding="#{DataBaseBooks.addbooks_database}" id="addbooks_database"
-                            style="position: absolute; left: 360px; top: 144px; width: 168px; height: 24px" text="addbooks_DataBase"/>
+                        <webuijsf:button actionExpression="#{DataBaseBooks.addbooks_database_action1}" binding="#{DataBaseBooks.addbooks_database}"
+                            id="addbooks_database" style="position: absolute; left: 360px; top: 144px; width: 168px; height: 24px" text="addbooks_DataBase"/>
                         <webuijsf:messageGroup id="messageGroup1" style="left: 600px; top: 96px; position: absolute"/>
                         <div style="position: absolute; left: 336px; top: 216px">
                             <jsp:directive.include file="BooksApplicationfragment.jspf"/>

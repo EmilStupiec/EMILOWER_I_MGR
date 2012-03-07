@@ -110,8 +110,13 @@ public class DataBaseBooks extends AbstractPageBean {
         Menu menudiv = (Menu) getBean("Menu");
         Hyperlink link7= menudiv.getHyperlink7();
         link7.setDisabled(true);
+        getApplicationBean1().updateBooks();
     }
 
+    public String addbooks_database_action1(){
+        getApplicationBean1().addbooks_DataBase();
+        return null;
+    }
     /**
      * <p>Callback method that is called after rendering is completed for
      * this request, if <code>init()</code> was called (regardless of whether
